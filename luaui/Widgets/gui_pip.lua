@@ -987,6 +987,7 @@ function pipTV.DirectorTick(dt)
 
 	-- Before game start, stay on overview — pre-game map markers shouldn't move the camera
 	-- Note: can't use gameHasStarted (declared later in file), so check gameFrame directly
+	local gameFrame = Spring.GetGameFrame()
 	if gameFrame == 0 then
 		local offsetX = (pipNumber or 0) * Game.mapSizeX * 0.15
 		local overviewX = math.min(Game.mapSizeX * 0.85, Game.mapSizeX / 2 + offsetX)

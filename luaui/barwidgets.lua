@@ -16,6 +16,9 @@ VFS.Include(LUAUI_DIRNAME .. "callins.lua", nil, VFS.ZIP)
 VFS.Include(LUAUI_DIRNAME .. "savetable.lua", nil, VFS.ZIP)
 
 local gl = gl
+local actionHandler = actionHandler
+---@diagnostic disable-next-line: undefined-global
+local ripairs = ripairs
 
 local CONFIG_FILENAME = LUAUI_DIRNAME .. "Config/" .. Game.gameShortName .. ".lua"
 local WIDGET_DIRNAME = LUAUI_DIRNAME .. "Widgets/"

@@ -1,6 +1,7 @@
 local widget = widget ---@type Widget
 
 local customPresetOptions -- forward-decl: read in options export
+local customPresets -- forward-decl: read in config export
 
 function widget:GetInfo()
 	return {
@@ -1265,7 +1266,7 @@ local function checkQuitscreen()
 	end
 	quitscreen = (WG.topbar and WG.topbar.showingQuit() or false)
 	if prevQuitscreen ~= quitscreen then
-		if quitscreen and isClientPaused and not showToggledOff then
+		if quitscreen and widget.isClientPaused and not showToggledOff then
 			skipUnpauseOnHide = true
 		end
 		if not skipUnpauseOnHide then
